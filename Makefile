@@ -1,11 +1,18 @@
 DOCKER=docker
-WORKBENCH=vidbina/ror:alpha
+DOCKER_COMPOSE=docker-compose
+IMAGE=vidbina/ror:alpha
+
+image:
+	${DOCKER} build -t ${IMAGE} .
 
 reown:
 	${SUDO} ${CHOWN} ${USER}: -R .
 
 shell:
-	${DOCKER} run --rm -it -v ${PWD}:/src -w /src ${WORKBENCH} /bin/bash
+	${DOCKER} run --rm -it -v ${PWD}:/src -w /src ${IMAGE} /bin/bash
+
+server:
+	${DOCKER_COMPOSE} up web
 
 .PHONY:
-	reown shell
+	image reown shell server

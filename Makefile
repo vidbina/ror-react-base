@@ -1,6 +1,8 @@
 DOCKER=docker
 DOCKER_COMPOSE=docker-compose
 IMAGE=vidbina/ror:alpha
+SUDO=sudo
+CHOWN=chown
 
 image:
 	${DOCKER} build -t ${IMAGE} .

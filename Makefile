@@ -11,10 +11,13 @@ reown:
 	${SUDO} ${CHOWN} ${USER}: -R .
 
 shell:
-	${DOCKER} run --rm -it -v ${PWD}:/src -w /src ${IMAGE} /bin/bash
+	${DOCKER_COMPOSE} run --rm -w /src web bash
 
 server:
 	${DOCKER_COMPOSE} up web
+
+down:
+	${DOCKER_COMPOSE} down
 
 .PHONY:
 	image reown shell server

@@ -11,7 +11,7 @@ reown:
 	${SUDO} ${CHOWN} ${USER}: -R .
 
 shell:
-	${DOCKER_COMPOSE} run --rm -w /src web bash
+	${DOCKER_COMPOSE} exec web bash
 
 server:
 	${DOCKER_COMPOSE} up web

@@ -5,7 +5,7 @@ SUDO=sudo
 CHOWN=chown
 
 image:
-	${DOCKER} build -t ${IMAGE} .
+	${DOCKER_COMPOSE} build
 
 reown:
 	${SUDO} ${CHOWN} ${USER}: -R .

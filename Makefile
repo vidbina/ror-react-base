@@ -1,6 +1,5 @@
 DOCKER=docker
 DOCKER_COMPOSE=docker-compose
-IMAGE=vidbina/ror:alpha
 SUDO=sudo
 CHOWN=chown
 
@@ -11,7 +10,7 @@ reown:
 	${SUDO} ${CHOWN} ${USER}: -R .
 
 shell:
-	${DOCKER} run --rm -it -v ${PWD}:/src -w /src ${IMAGE} /bin/bash
+	${DOCKER_COMPOSE} run web bash
 
 server:
 	${DOCKER_COMPOSE} up web

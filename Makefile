@@ -2,6 +2,7 @@ DOCKER=docker
 DOCKER_COMPOSE=docker-compose
 SUDO=sudo
 CHOWN=chown
+RM=rm
 
 image:
 	${DOCKER_COMPOSE} build
@@ -15,5 +16,8 @@ shell:
 server:
 	${DOCKER_COMPOSE} up web
 
+clean:
+	${SUDO} ${RM} -rf tmp
+
 .PHONY:
-	image reown shell server
+	clean image reown server shell

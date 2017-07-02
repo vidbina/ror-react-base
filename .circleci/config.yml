@@ -2,6 +2,7 @@ jobs:
   build:
     docker:
      - image: 'vidbina/ror-react-base:alpha'
+       entrypoint: /bin/bash
     working_directory: ~/
     steps:
       - run:

@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-     - image: vidbina/ror-react-base:setup_circleci
+     - image: vidbina/ror-react-base:alpha
     working_directory: ~/
     steps:
       - checkout

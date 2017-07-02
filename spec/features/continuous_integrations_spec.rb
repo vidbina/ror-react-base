@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "ContinuousIntegrations", type: :feature do
   describe 'comparison' do
     it 'of booleans' do
-      expect(true).to be false
+      expect(true).not_to be false
     end
 
     it 'of integers' do

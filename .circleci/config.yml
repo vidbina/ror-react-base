@@ -4,7 +4,7 @@ jobs:
      - image: 'vidbina/ror-react-base:alpha'
        entrypoint: /bin/bash
        user: root
-    working_directory: ~/
+    working_directory: /src
     steps:
       - run:
           name: Prepare report directory

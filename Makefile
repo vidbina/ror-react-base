@@ -15,5 +15,8 @@ shell:
 server:
 	${DOCKER_COMPOSE} up web
 
+rspec:
+	${DOCKER_COMPOSE} up test
+
 .PHONY:
-	image reown shell server
+	image reown rspec server shell

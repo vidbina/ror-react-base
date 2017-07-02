@@ -7,3 +7,8 @@ services:
       - .:/src
     ports:
       - "3000:3000"
+  test:
+    build: .
+    command: bundle exec rspec --format progress --format RspecJunitFormatter -o rspec.xml
+    volumes:
+      - .:/src

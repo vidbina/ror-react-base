@@ -16,7 +16,7 @@ server:
 	${DOCKER_COMPOSE} up web
 
 prep:
-	${DOCKER_COMPOSE} run test bash -c "bundle exec rake db:create && bundle exec rake db:migrate"
+	${DOCKER_COMPOSE} run test bash -c "sleep 5 && bundle exec rake db:migrate"
 rspec:
 	${DOCKER_COMPOSE} run test
 

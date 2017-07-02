@@ -1,3 +1,4 @@
+version: 2
 jobs:
   build:
     docker:
@@ -15,3 +16,8 @@ jobs:
           command: bundle exec rspec --format progress --format RspecJunitFormatter -o /tmp/test-reports/rspec.xml
 #      - store_test_results:
 #        path: /tmp/test-reports
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build

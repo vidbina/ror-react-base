@@ -18,5 +18,8 @@ server:
 rspec:
 	${DOCKER_COMPOSE} up test
 
+down:
+	${DOCKER_COMPOSE} down
+
 .PHONY:
-	image reown rspec server shell
+	down image reown rspec server shell

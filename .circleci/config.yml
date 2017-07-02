@@ -3,6 +3,7 @@ jobs:
     docker:
      - image: 'vidbina/ror-react-base:alpha'
        entrypoint: /bin/bash
+       user: root
     working_directory: ~/
     steps:
       - run:

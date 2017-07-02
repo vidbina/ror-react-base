@@ -1,0 +1,15 @@
+jobs:
+  build:
+    docker:
+     - image: 'vidbina/ror-react-base:alpha'
+    working_directory: ~/
+    steps:
+      - run:
+          name: Prepare report directory
+          command: mkdir -p /tmp/test-reports
+      #      - checkout
+      - run:
+          name: Build test report
+          command: bundle exec rspec --format progress --format RspecJunitFormatter -o /tmp/test-reports/rspec.xml
+#      - store_test_results:
+#        path: /tmp/test-reports

@@ -14,7 +14,18 @@ jobs:
             which docker-compose && docker-compose version
             which make && make --version
             pwd && ls -la
-#      - run: mkdir -p /tmp/test-reports
-#      - run: bundle exec rspec --format progress --format RspecJunitFormatter -o /tmp/test-reports/rspec.xml
-#      - store_test_results:
-#          path: /tmp/test-reports
+      - run:
+          name: Build image locally
+          command: |
+            make image
+      - run:
+          name: Prepare test environment
+          command: |
+            make prep
+      - run:
+          name: Test
+          command: |
+            mkdir -p reports/rspec
+            docker-compose run test bash -c "bundle exec rspec --format progress --format RspecJunitFormatter -o reports/rspec/rspec.xml"
+      - store_test_results:
+          path: reports

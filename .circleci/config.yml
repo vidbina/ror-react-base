@@ -38,11 +38,11 @@ jobs:
           command: |
             make image
       - run:
-          name: Prepare test environment
+          name: Prepare rspec and run tests
           command: |
             pwd && ls -la
             cat docker-compose.yml
-            make prep
+            make prep_and_rspec
       - run:
           name: Test
           command: |

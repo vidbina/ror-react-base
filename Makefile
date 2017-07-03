@@ -21,8 +21,11 @@ prep:
 rspec:
 	${DOCKER_COMPOSE} run test
 
+prep_and_rspec:
+	${DOCKER_COMPOSE} run test bash -c "mkdir -p reports/rspec && pwd && ls -la && sleep 5 && bundle exec rake db:migrate && bundle exec rspec --format progress --format RspecJunitFormatter -o reports/rspec/rspec.xml"
+
 down:
 	${DOCKER_COMPOSE} down
 
 .PHONY:
-	down image reown rspec server shell prep
+	down image reown rspec server shell prep prep_and_rspec

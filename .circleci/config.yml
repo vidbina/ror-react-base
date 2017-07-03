@@ -36,14 +36,17 @@ jobs:
       - run:
           name: Build image locally
           command: |
+            pwd && ls -la
             make image
       - run:
           name: Prepare test environment
           command: |
+            pwd && ls -la
             make prep
       - run:
           name: Test
           command: |
+            pwd && ls -la
             mkdir -p reports/rspec
             docker-compose run test bash -c "bundle exec rspec --format progress --format RspecJunitFormatter -o reports/rspec/rspec.xml"
       - store_test_results:

@@ -5,6 +5,12 @@ services:
 
 before_install:
   - pwd && ls -la
+
+install:
   - make image
+
+before_script:
   - make prep
+
+script:
   - make rspec

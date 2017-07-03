@@ -1,8 +1,7 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: buildpack-deps:trusty
+    machine: true
     working_directory: /build
     steps:
       - checkout
@@ -38,11 +37,11 @@ jobs:
           command: |
             make image
       - run:
-          name: Prepare rspec and run tests
+          name: Prepare tests
           command: |
             pwd && ls -la
             cat docker-compose.yml
-            make prep_and_rspec
+            make prep
       - run:
           name: Test
           command: |

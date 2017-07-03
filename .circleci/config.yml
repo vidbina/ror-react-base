@@ -12,7 +12,7 @@ jobs:
           command: |
             which docker && docker version
             which docker-compose && docker-compose version
-            which make && make version
+            which make && make --version
 #      - run: mkdir -p /tmp/test-reports
 #      - run: bundle exec rspec --format progress --format RspecJunitFormatter -o /tmp/test-reports/rspec.xml
 #      - store_test_results:

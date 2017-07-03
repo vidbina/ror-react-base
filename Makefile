@@ -15,5 +15,8 @@ shell:
 server:
 	${DOCKER_COMPOSE} up web
 
+down:
+	${DOCKER_COMPOSE} down
+
 .PHONY:
 	image reown shell server

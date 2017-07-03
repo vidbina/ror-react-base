@@ -8,12 +8,17 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          name: Examine tools
+          name: Examine docker
           command: |
-            which docker && docker version
-            which docker-compose && docker-compose version
-            which make && make --version
-            pwd && ls -la
+            docker version
+      - run:
+          name: Examine docker-compose
+          command: |
+            docker-compose version
+      - run:
+          name: Examine make
+          command: |
+            make --version
       - run:
           name: Build image locally
           command: |

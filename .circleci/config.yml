@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-     - image: vidbina/ror-react-base:alpha
+     - image: ruby:2.4-slim #vidbina/ror-react-base:alpha
     working_directory: /build
     steps:
       - checkout

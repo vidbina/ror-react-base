@@ -2,8 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-     - image: vidbina/ror:latest
-    working_directory: ~/
+     - image: vidbina/ror-react-base:alpha
+    working_directory: /build
     steps:
       - checkout
       - setup_remote_docker

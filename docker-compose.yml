@@ -14,3 +14,12 @@ services:
       - "3000:3000"
     volumes:
       - .:/src
+  test:
+    build: .
+    command: bundle exec rspec --format progress --format RspecJunitFormatter -o rspec.xml
+    depends_on:
+      - db
+    env_file:
+      - db.env
+    volumes:
+      - .:/src

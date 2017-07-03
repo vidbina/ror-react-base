@@ -40,6 +40,8 @@ jobs:
       - run:
           name: Prepare test environment
           command: |
+            pwd && ls -la
+            cat docker-compose.yml
             make prep
       - run:
           name: Test

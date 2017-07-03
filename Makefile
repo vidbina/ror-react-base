@@ -25,4 +25,4 @@ down:
 	${DOCKER_COMPOSE} down
 
 .PHONY:
-	down image reown rspec server shell prep prep_and_rspec
+	down image reown rspec server shell prep
